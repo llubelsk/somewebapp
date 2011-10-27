@@ -9,6 +9,6 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <p><a href="message">See a message from servlet</a></p>
+        <p><a href="dane">See a message from servlet</a></p>
     </body>
 </html>
