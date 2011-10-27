@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/message")
+@WebServlet(urlPatterns = "/dane")
 
 public class Dane extends HttpServlet {	
 	private static final long serialVersionUID = 1L;
@@ -22,10 +22,11 @@ public class Dane extends HttpServlet {
 		response.setContentType("text/html");		
 
 		PrintWriter out = response.getWriter();	
+		
 		out.print("<html><body>" +			
 
-		"<form method=\"post\" action =\""+ request.getContextPath() + "/message\" >" +
-		
+		//"<form method=\"post\" action =\""+ request.getContextPath() + "/message\" >" +
+		"<form action='wyswietl'>" +
 		"Imie: <input type='text' name='imie' /><br />" +
 
 		"Rok urodzenia: <input type='integer' name='rok' /><br />" +		
@@ -35,8 +36,8 @@ public class Dane extends HttpServlet {
 		"<input type='radio' name='plec' value='kobieta' /> Kobieta<br />" +	
 
 		"Jakie placki lubisz:<br />" + 
-		"<input type='checkbox' name='placek1' value='Jablkowe' /> Jablkowe <br />" +
-		"<input type='checkbox' name='placek2' value='Wisniowe' /> Wisniowe<br />" +
+		"<input type='checkbox' name='placek' value='Jablkowe' /> Jablkowe <br />" +
+		"<input type='checkbox' name='placek' value='Wisniowe' /> Wisniowe<br />" +
 
 		"<action=''>" +
 		"<select name='cars'>" +
@@ -56,36 +57,7 @@ public class Dane extends HttpServlet {
 		
 		"<input type='submit' value='Submit' /></form>" +		
 
-		"</body></html>");	
-		
-	}
-	
-	  public void doPost(HttpServletRequest request, HttpServletResponse response)
-		      throws ServletException, java.io.IOException {
-
-		  String imie = request.getParameter("imie");
-		  String rok = request.getParameter("rok");
-		  String plec = request.getParameter("plec");
-		  String placek1 = request.getParameter("placek1");
-		  String placek2 = request.getParameter("placek2");
-		  String cars = request.getParameter("cars");
-		  String toppings = request.getParameter("toppings");
-		  
-		  response.setContentType("text/html");
-		  
-		  PrintWriter out = response.getWriter();
-		  
-		  out.print("<html><body>" +		  
-				 "Imie: " + imie + "<br />" +
-				 "Rok urodzenia: " + rok + "<br />" +
-				 "Plec: " + plec + "<br />" +
-				 "Lubiane placki: " + placek1 + " " + placek2 + "<br />" +
-				 "Posiadany samochod: " + cars + "<br />" +
-				 "Ulubione warzywo: " + toppings + "<br />" +
-				 
-	  		"</body></html>");		
-		  
-	  }
-	
-}
-
+		"</body></html>");
+		out.close();
+		}
+	}	
