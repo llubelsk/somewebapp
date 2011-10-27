@@ -25,7 +25,6 @@ public class Dane extends HttpServlet {
 		
 		out.print("<html><body>" +			
 
-		//"<form method=\"post\" action =\""+ request.getContextPath() + "/message\" >" +
 		"<form action='wyswietl'>" +
 		"Imie: <input type='text' name='imie' /><br />" +
 

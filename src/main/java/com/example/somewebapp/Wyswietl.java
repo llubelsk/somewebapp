@@ -23,8 +23,7 @@ public class Wyswietl extends HttpServlet {
 		  String rok = request.getParameter("rok");
 		  String plec = request.getParameter("plec");
 		  String[] placek;
-		  placek = request.getParameterValues("placek");
-		  //String placek2 = request.getParameter("placek2");		  
+		  placek = request.getParameterValues("placek");		  
 		  String cars = request.getParameter("cars");
 		  String toppings = request.getParameter("toppings");
 
